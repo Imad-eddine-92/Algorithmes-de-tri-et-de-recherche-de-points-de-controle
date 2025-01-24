@@ -10,27 +10,27 @@ BEGIN
 
     // Lecture des éléments du tableau (INPUT)
     WRITE("Donnez-moi les éléments du tableau un par un : ")
-    WHILE k DE 0 A n-1 FAIRE
+    while k from 0 A n-1 do
         READ(tableau[k])
 
     // Par exemple : tableau = [1, 8, 6, 0]
 
     // Processus du tri par insertion
-    WHILE i FROM 1 A n-1 DO
+    while i FROM 1 A n-1 do
         key := tableau[i] // La clé à insérer
         j := i - 1
 
-        WHEN (j >= 0 ET tableau[j] > key) DO
+        when (j >= 0 et tableau[j] > key) do
             tableau[j+1] := tableau[j]
-            j <- j - 1
+            j := j - 1
 
         tableau[j+1] := key
 
 
     // OUTPUT : Affichage du tableau trié
     WRITE("Le tableau trié avec le tri par insertion est : ")
-    FOR k DE 0 A n-1 DO
-        WRITE (tableau[k])
+    for k from 0 A n-1 do
+        write (tableau[k])
 
 
-FIN
+fin
