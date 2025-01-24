@@ -1,0 +1,36 @@
+ALGORITHM tri_Insertion
+VAR
+    key, n, i, j, k : ENTIER
+    tableau : TABLEAU [50] ENTIER
+
+BEGIN
+    // Lecture du nombre d éléments dans le tableau
+    WEITE("Donnez-moi le nombre d'éléments du tableau : ")
+    READ(n) // Par exemple : 4
+
+    // Lecture des éléments du tableau (INPUT)
+    WRITE("Donnez-moi les éléments du tableau un par un : ")
+    WHILE k DE 0 A n-1 FAIRE
+        READ(tableau[k])
+
+    // Par exemple : tableau = [1, 8, 6, 0]
+
+    // Processus du tri par insertion
+    WHILE i FROM 1 A n-1 DO
+        key := tableau[i] // La clé à insérer
+        j := i - 1
+
+        WHEN (j >= 0 ET tableau[j] > key) DO
+            tableau[j+1] := tableau[j]
+            j <- j - 1
+
+        tableau[j+1] := key
+
+
+    // OUTPUT : Affichage du tableau trié
+    WRITE("Le tableau trié avec le tri par insertion est : ")
+    FOR k DE 0 A n-1 DO
+        WRITE (tableau[k])
+
+
+FIN
